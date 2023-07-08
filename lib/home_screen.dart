@@ -100,7 +100,7 @@ class _HomeScreenState extends State<HomeScreen> {
         context: context,
         builder: (context) => AlertDialog(
           title: const Text('Success'),
-          content: const Text('Data sent successfully.'),
+          content: const Text('Data terkirim.'),
           actions: [
             TextButton(
               onPressed: () {
