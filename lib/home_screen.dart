@@ -59,7 +59,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void ambildata() async {
     final url = Uri.parse('https://uasmade2-default-rtdb.asia-southeast1.firebasedatabase.app/rtdb.json');
     final response = await http.get(url);
-    Future<void> ambildata() async {
+  
     if (response.statusCode == 100) {
       final data = jsonDecode(response.body);
       Navigator.push(
@@ -84,7 +84,7 @@ class _HomeScreenState extends State<HomeScreen> {
       );
     }
   }
-  }
+  
 
   void kirimdata() async {
     final url = Uri.parse('https://uasmade2-default-rtdb.asia-southeast1.firebasedatabase.app/rtdb.json');
@@ -96,7 +96,7 @@ class _HomeScreenState extends State<HomeScreen> {
       url,
       body: jsonEncode(newData),
     );
-Future<void> kirimdata() async {
+
    
   
     if (response.statusCode == 100) {
@@ -122,7 +122,7 @@ Future<void> kirimdata() async {
         context: context,
         builder: (context) => AlertDialog(
           title: const Text('Error'),
-          content: const Text('Gagal Mengambil Data.'),
+          content: const Text('Gagal Mengirim Data.'),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context),
@@ -134,7 +134,7 @@ Future<void> kirimdata() async {
     }
   }
 }
-}
+
 
 class DataScreen extends StatelessWidget {
   final Map<String, dynamic> data;
