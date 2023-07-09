@@ -26,13 +26,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Sending and Receiving Data From Firebase',
+      title: 'Send and Receive Data From Firebase',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         brightness: Brightness.light,
       ),
       darkTheme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.orange,
         brightness: Brightness.dark,
       ),
       themeMode: ThemeMode.system,

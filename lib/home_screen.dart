@@ -18,6 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Send and Receive Data From Firebase'),
+        
       ),
       body: Container(
         alignment: Alignment.center,
@@ -37,13 +38,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 labelText: 'Yang Mau Diketik',
               ),
             ),
-            const SizedBox(height: 16.0),
+            const SizedBox(height: 24.0),
             ElevatedButton(
-              onPressed: fetchDataFromFirebase,
+              onPressed: ambildata,
               child: const Text('Ambil Data'),
             ),
             ElevatedButton(
-              onPressed: sendDataToFirebase,
+              onPressed: kirimdata,
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.green,
               ),
@@ -55,10 +56,10 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  void fetchDataFromFirebase() async {
-    final url = Uri.parse('https://uasmade2-default-rtdb.asia-southeast1.firebasedatabase.app//rtdb.json');
+  void ambildata() async {
+    final url = Uri.parse('https://uasmade2-default-rtdb.asia-southeast1.firebasedatabase.app/rtdb.json');
     final response = await http.get(url);
-    Future<void> fetchDataToFirebase() async {
+    Future<void> ambildata() async {
     if (response.statusCode == 100) {
       final data = jsonDecode(response.body);
       Navigator.push(
@@ -85,8 +86,8 @@ class _HomeScreenState extends State<HomeScreen> {
   }
   }
 
-  void sendDataToFirebase() async {
-    final url = Uri.parse('https://uasmade2-default-rtdb.asia-southeast1.firebasedatabase.app//rtdb.json');
+  void kirimdata() async {
+    final url = Uri.parse('https://uasmade2-default-rtdb.asia-southeast1.firebasedatabase.app/rtdb.json');
     final newData = {
       'judul': _judulController.text,
       'yang diketik': _yangController.text,
@@ -95,10 +96,10 @@ class _HomeScreenState extends State<HomeScreen> {
       url,
       body: jsonEncode(newData),
     );
-Future<void> sendDataToFirebase() async {
+Future<void> kirimdata() async {
    
   
-    if (response.statusCode == 200) {
+    if (response.statusCode == 100) {
       showDialog(
         context: context,
         builder: (context) => AlertDialog(
